@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#http://askubuntu.com/questions/19345/how-do-i-count-the-clicks-of-the-mouse-buttons
+
+id=11
+
+xinput test $id | awk 'BEGIN { count=0 } /release/ { count=count+1; printf "\r%-6d", count }'
